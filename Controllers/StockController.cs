@@ -1,6 +1,12 @@
-﻿namespace WebApi.Controllers
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace WebApi.Controllers
 {
-    public class StockController
+    public class StockController : ControllerBase
     {
+        public StockController()
+        {
+            
+        }
     }
 }
