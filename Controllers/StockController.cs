@@ -15,9 +15,11 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("GetAllStocks")]
-        public IActionResult GetAll() 
+        public IActionResult GetAll()
         {
-            var stocks = _context.Stocks.ToList();
+            var stocks = _context.Stocks
+             .Select(s => new { s.CompanyName, s.Purchase })
+             .ToList();
             return Ok(stocks);
         }
 
